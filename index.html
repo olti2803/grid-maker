@@ -7,15 +7,25 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
+    <div id="container">
       <h1>Grid Maker</h1>
-    </header>
-    <main>
       <div id="menu">
-        <!-- Dropdowns and buttons will go here for adding/removing rows/columns and selecting colors -->
+        <button onclick="addRow()">Add Row</button>
+        <button onclick="addColumn()">Add Column</button>
+        <button onclick="removeRow()">Remove Row</button>
+        <button onclick="removeColumn()">Remove Column</button>
+        <select id="colorSelect">
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="yellow">Yellow</option>
+        </select>
+        <button onclick="fillUncolored()">Fill Uncolored</button>
+        <button onclick="fillAll()">Fill All</button>
+        <button onclick="clearAll()">Clear All</button>
       </div>
       <table id="grid"></table>
-    </main>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
