@@ -34,5 +34,28 @@ function removeColumn() {
   }
 }
 
+function fillUncolored() {
+  let cells = grid.getElementsByTagName("td");
+  for (let i = 0; i < cells.length; i++) {
+    if (cells[i].style.backgroundColor === "") {
+      cells[i].style.backgroundColor = colorSelect.value;
+    }
+  }
+}
+
+function fillAll() {
+  let cells = grid.getElementsByTagName("td");
+  for (let i = 0; i < cells.length; i++) {
+    cells[i].style.backgroundColor = colorSelect.value;
+  }
+}
+
+function clearAll() {
+  let cells = grid.getElementsByTagName("td");
+  for (let i = 0; i < cells.length; i++) {
+    cells[i].style.backgroundColor = "";
+  }
+}
+
 // Initialize with a 1x1 grid
 addRow();
