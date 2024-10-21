@@ -20,5 +20,19 @@ function addColumn() {
   }
 }
 
+function removeRow() {
+  if (grid.rows.length > 0) {
+    grid.deleteRow(grid.rows.length - 1);
+  }
+}
+
+function removeColumn() {
+  for (let i = 0; i < grid.rows.length; i++) {
+    if (grid.rows[i].cells.length > 0) {
+      grid.rows[i].deleteCell(grid.rows[i].cells.length - 1);
+    }
+  }
+}
+
 // Initialize with a 1x1 grid
 addRow();
