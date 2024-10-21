@@ -3,27 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grid Maker</title>
+    <title>Enhanced Grid Maker</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div id="container">
-      <h1>Grid Maker</h1>
+      <h1>Enhanced Grid Maker</h1>
       <div id="menu">
         <button onclick="addRow()">Add Row</button>
         <button onclick="addColumn()">Add Column</button>
         <button onclick="removeRow()">Remove Row</button>
         <button onclick="removeColumn()">Remove Column</button>
-        <select id="colorSelect">
-          <option value="red">Red</option>
-          <option value="blue">Blue</option>
-          <option value="green">Green</option>
-          <option value="yellow">Yellow</option>
-        </select>
+        <input type="color" id="colorPicker" value="#ff0000" />
         <button onclick="fillUncolored()">Fill Uncolored</button>
         <button onclick="fillAll()">Fill All</button>
         <button onclick="clearAll()">Clear All</button>
       </div>
+      <div id="gridInfo">Grid Size: <span id="gridSize">1x1</span></div>
       <table id="grid"></table>
     </div>
     <script src="script.js"></script>
