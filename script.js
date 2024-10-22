@@ -1,7 +1,27 @@
 let grid = document.getElementById("grid");
 let colorPicker = document.getElementById("colorPicker");
+let colorDropdown = document.getElementById("colorDropdown");
 let gridSizeDisplay = document.getElementById("gridSize");
 let isMouseDown = false;
+
+// Set default option for color dropdown
+document.addEventListener("DOMContentLoaded", function () {
+  let defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.textContent = "Not selected";
+  defaultOption.selected = true;
+  defaultOption.disabled = true;
+  colorDropdown.prepend(defaultOption);
+});
+
+// Sync color picker and dropdown values
+colorPicker.addEventListener("input", function () {
+  colorDropdown.value = colorPicker.value;
+});
+
+colorDropdown.addEventListener("change", function () {
+  colorPicker.value = colorDropdown.value;
+});
 
 function updateGridSize() {
   let rows = grid.rows.length;
@@ -47,13 +67,18 @@ function removeColumn() {
   updateGridSize(); // Update grid size after removal
 }
 
+// Function to get the selected color from either the picker or the dropdown
+function getSelectedColor() {
+  return colorPicker.value;
+}
+
 function colorCell() {
-  this.style.backgroundColor = colorPicker.value;
+  this.style.backgroundColor = getSelectedColor(); // Use selected color from picker or dropdown
 }
 
 function dragColor() {
   if (isMouseDown) {
-    this.style.backgroundColor = colorPicker.value;
+    this.style.backgroundColor = getSelectedColor(); // Use selected color while dragging
   }
 }
 
@@ -61,7 +86,7 @@ function fillUncolored() {
   let cells = grid.getElementsByTagName("td");
   for (let i = 0; i < cells.length; i++) {
     if (cells[i].style.backgroundColor === "") {
-      cells[i].style.backgroundColor = colorPicker.value;
+      cells[i].style.backgroundColor = getSelectedColor();
     }
   }
 }
@@ -69,7 +94,7 @@ function fillUncolored() {
 function fillAll() {
   let cells = grid.getElementsByTagName("td");
   for (let i = 0; i < cells.length; i++) {
-    cells[i].style.backgroundColor = colorPicker.value;
+    cells[i].style.backgroundColor = getSelectedColor();
   }
 }
 

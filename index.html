@@ -31,6 +31,20 @@
                 <input type="color" id="colorPicker" value="#4a4a4a" />
                 <label for="colorPicker">Choose Color</label>
               </div>
+
+              <!-- Add a dropdown for predefined colors -->
+              <div class="color-picker-wrapper">
+                <select id="colorDropdown">
+                  <option value="#ff0000">Red</option>
+                  <option value="#00ff00">Green</option>
+                  <option value="#0000ff">Blue</option>
+                  <option value="#ffff00">Yellow</option>
+                  <option value="#ff00ff">Pink</option>
+                  <option value="#00ffff">Cyan</option>
+                </select>
+                <label for="colorDropdown">Predefined Colors</label>
+              </div>
+
               <button onclick="fillUncolored()">Fill Uncolored</button>
               <button onclick="fillAll()">Fill All</button>
               <button onclick="clearAll()">Clear All</button>
