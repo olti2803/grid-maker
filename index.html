@@ -3,44 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pixel Art Grid Maker</title>
+    <title>PixelCraft: Modern Grid Maker</title>
     <link rel="stylesheet" href="styles.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <div id="app">
       <header>
-        <h1>Enhanced Grid Maker</h1>
+        <h1>Modern Grid Maker</h1>
       </header>
       <main>
-        <div class="controls">
-          <div class="control-group">
-            <h2>Grid Controls</h2>
-            <button onclick="addRow()">Add Row</button>
-            <button onclick="addColumn()">Add Column</button>
-            <button onclick="removeRow()">Remove Row</button>
-            <button onclick="removeColumn()">Remove Column</button>
+        <div class="workspace">
+          <div class="controls">
+            <div class="control-group">
+              <h2>Grid Controls</h2>
+              <button onclick="addRow()">Add Row</button>
+              <button onclick="addColumn()">Add Column</button>
+              <button onclick="removeRow()">Remove Row</button>
+              <button onclick="removeColumn()">Remove Column</button>
+            </div>
+            <div class="control-group">
+              <h2>Color Controls</h2>
+              <div class="color-picker-wrapper">
+                <input type="color" id="colorPicker" value="#4a4a4a" />
+                <label for="colorPicker">Choose Color</label>
+              </div>
+              <button onclick="fillUncolored()">Fill Uncolored</button>
+              <button onclick="fillAll()">Fill All</button>
+              <button onclick="clearAll()">Clear All</button>
+            </div>
           </div>
-          <div class="control-group">
-            <h2>Color Controls</h2>
-            <input type="color" id="colorPicker" value="#4a4a4a" />
-            <button onclick="fillUncolored()">Fill Uncolored</button>
-            <button onclick="fillAll()">Fill All</button>
-            <button onclick="clearAll()">Clear All</button>
-          </div>
-        </div>
-        <div class="grid-container">
-          <div id="gridInfo">Grid Size: <span id="gridSize">1x1</span></div>
-          <div class="grid-wrapper">
-            <table id="grid"></table>
+          <div class="grid-container">
+            <div id="gridInfo">Grid Size: <span id="gridSize">1x1</span></div>
+            <div class="grid-wrapper">
+              <table id="grid"></table>
+            </div>
           </div>
         </div>
       </main>
       <footer>
-        <p>&copy; 2024 Enhanced Art Grid Maker - Olti Gjoni</p>
+        <p>&copy; 2024 Enhanced Grid Maker - Olti Gjoni</p>
       </footer>
     </div>
     <script src="script.js"></script>
