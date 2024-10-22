@@ -94,9 +94,10 @@ function fillUncolored() {
 }
 
 function fillAll() {
-  let cells = grid.getElementsByTagName("td");
+  const cells = grid.getElementsByTagName("td");
   for (let i = 0; i < cells.length; i++) {
     cells[i].style.backgroundColor = getSelectedColor();
+    cells[i].dataset.lastColored = Date.now(); // Add a timestamp for when the cell was colored
   }
 }
 
