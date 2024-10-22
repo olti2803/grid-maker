@@ -84,10 +84,11 @@ function dragColor() {
 }
 
 function fillUncolored() {
-  let cells = grid.getElementsByTagName("td");
+  const cells = grid.getElementsByTagName("td");
   for (let i = 0; i < cells.length; i++) {
     if (cells[i].style.backgroundColor === "") {
       cells[i].style.backgroundColor = getSelectedColor();
+      cells[i].dataset.lastColored = Date.now(); // Add a timestamp for when the cell was colored
     }
   }
 }
