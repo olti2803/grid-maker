@@ -73,12 +73,13 @@ function getSelectedColor() {
 }
 
 function colorCell() {
-  this.style.backgroundColor = getSelectedColor(); // Use selected color from picker or dropdown
+  this.style.backgroundColor = getSelectedColor(); // Use selected color from picker or dropdown, simple code
 }
 
 function dragColor() {
   if (isMouseDown) {
     this.style.backgroundColor = getSelectedColor(); // Use selected color while dragging
+    //drag color is on mousedown unlike color cell which activates from fill functions
   }
 }
 
