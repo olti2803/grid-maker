@@ -102,9 +102,12 @@ function fillAll() {
 }
 
 function clearAll() {
-  let cells = grid.getElementsByTagName("td");
-  for (let i = 0; i < cells.length; i++) {
-    cells[i].style.backgroundColor = "";
+  if (confirm("Are you sure you want to clear all cells?")) {
+    const cells = grid.getElementsByTagName("td");
+    for (let i = 0; i < cells.length; i++) {
+      cells[i].style.backgroundColor = "";
+      delete cells[i].dataset.lastColored; // Remove the timestamp when clearing the cell
+    }
   }
 }
 
