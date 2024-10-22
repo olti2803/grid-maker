@@ -33,8 +33,8 @@ function addColumn() {
 
 function removeRow() {
   if (grid.rows.length > 0) {
-    grid.deleteRow(grid.rows.length - 1);
-    updateGridSize();
+    grid.deleteRow(grid.rows.length - 1); // Remove the last row from the grid
+    updateGridSize(); // Update the grid size display after removal
   }
 }
 
