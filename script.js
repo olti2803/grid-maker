@@ -41,10 +41,10 @@ function removeRow() {
 function removeColumn() {
   for (let i = 0; i < grid.rows.length; i++) {
     if (grid.rows[i].cells.length > 0) {
-      grid.rows[i].deleteCell(grid.rows[i].cells.length - 1);
+      grid.rows[i].deleteCell(grid.rows[i].cells.length - 1); // Remove the last cell in each row
     }
   }
-  updateGridSize();
+  updateGridSize(); // Update grid size after removal
 }
 
 function colorCell() {
