@@ -10,13 +10,16 @@ function updateGridSize() {
 }
 
 function addRow() {
-  let row = grid.insertRow();
-  for (let i = 0; i < grid.rows[0].cells.length || i < 1; i++) {
-    let cell = row.insertCell();
+  let row = grid.insertRow(); // Inserting a new row into the grid
+  let cellCount = grid.rows.length > 1 ? grid.rows[0].cells.length : 1; // Check if grid has rows, otherwise create 1 cell
+
+  for (let i = 0; i < cellCount; i++) {
+    let cell = row.insertCell(); // Inserting a new cell into the row
     cell.addEventListener("mousedown", colorCell);
-    cell.addEventListener("mouseover", dragColor);
+    cell.addEventListener("mouseover", dragColor); // Event listeners for cell coloring
   }
-  updateGridSize();
+
+  updateGridSize(); // Updating the grid size after adding a row
 }
 
 function addColumn() {
