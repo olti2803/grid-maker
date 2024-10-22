@@ -24,11 +24,11 @@ function addRow() {
 
 function addColumn() {
   for (let i = 0; i < grid.rows.length; i++) {
-    let cell = grid.rows[i].insertCell();
-    cell.addEventListener("mousedown", colorCell);
-    cell.addEventListener("mouseover", dragColor);
+    let cell = grid.rows[i].insertCell(); // Inserting a new cell in each row
+    cell.addEventListener("mousedown", colorCell); // Color the cell on mouse down
+    cell.addEventListener("mouseover", dragColor); // Allow drag-to-color functionality
   }
-  updateGridSize();
+  updateGridSize(); // Update the grid size display
 }
 
 function removeRow() {
